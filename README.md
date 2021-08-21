@@ -16,18 +16,14 @@ Instruction How to Run the Spring Boot Application with Docker Container.
    ![eureka-registered-services](https://user-images.githubusercontent.com/15647309/130320704-68cdf7db-5059-45da-acc0-917ab4122cf5.PNG)
 5. Open POSTMAN for our client-side API request.
  - View Product
- - http://localhost:8080/product/list
  - ![view-product-list-response](https://user-images.githubusercontent.com/15647309/130321130-e7a78ad5-ec70-452a-bca5-878843c5a5f0.PNG)
  - Add Product 
- - http://localhost:8080/product
  - ![add-product-postman](https://user-images.githubusercontent.com/15647309/130320875-5c43cd6c-fa51-4edd-a3f9-7b1587203788.PNG)
  - ![add-product-response](https://user-images.githubusercontent.com/15647309/130320902-efe3d93e-e0a4-431b-9629-71ff6b668b4d.PNG) 
  - Add Product Order
- - http://localhost:8080/product/1/order
  - ![add-order-request](https://user-images.githubusercontent.com/15647309/130320954-88939b48-520e-4e2a-ae8b-f82269d204d8.PNG)
  - ![add-order-response](https://user-images.githubusercontent.com/15647309/130320957-7722fd6a-1478-46b3-95a7-bcffb91d6f22.PNG)
  - Add More Product(s) by Order ID
- - http://localhost:8080/product/1/order/2
  - ![add-product-by-order-id-request](https://user-images.githubusercontent.com/15647309/130321052-04e58325-4fb9-40ca-8139-85e48d93102d.PNG)
  - ![add-product-by-order-id-response](https://user-images.githubusercontent.com/15647309/130321054-55425b8f-ba55-4865-9bd6-ad6bc591a7b0.PNG)
  - ![add-product-by-order-id-response2](https://user-images.githubusercontent.com/15647309/130321055-ed38a620-70ae-4fc4-be00-3d8d6b907240.PNG)
