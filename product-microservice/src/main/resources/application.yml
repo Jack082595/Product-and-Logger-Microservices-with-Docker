@@ -1,0 +1,51 @@
+server: 
+   port: 8083
+   error:
+     include-message: always
+     include-binding-errors: always
+spring:
+  application:
+    name: product-service
+  cloud:
+    compatibility-verifier:
+      enabled: false
+  #h2:
+    #console:
+      #enabled: true
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    #url: jdbc:h2:mem:testdb;DB_CLOSE_ON_EXIT=FALSE
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://mysqldb:3306/bootdb
+    username: test
+    password: test
+    platform: mysql
+    initialization-mode: always
+  kafka:
+    producer:
+       bootstrap-servers: kafka:9092
+       key-serializer: org.apache.kafka.common.serialization.StringSerializer
+       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+    consumer:
+       bootstrap-servers: kafka:9092
+       group-id: group_id
+       auto-offset-reset: earliest
+       enable-auto-commit: false
+    listener:
+       missing-topics-fatal: false
+       ack-mode: MANUAL
+eureka:
+  #App name
+  instance:
+    appname: product-service
+    hostname: product-service
+    prefer-ip-address: true
+  #Register the service to the Eureka server
+  #In the following server
+  client:
+    fetch-registry: true
+    registerWithEureka: true
+    service-url:
+      defaultZone: http://eureka-server:9000/eureka

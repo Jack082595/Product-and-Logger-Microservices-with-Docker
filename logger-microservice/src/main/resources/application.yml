@@ -1,0 +1,33 @@
+server: 
+   port: 8084
+  
+spring:
+    application:
+      name: logger-service
+    cloud:
+      compatibility-verifier:
+         enabled: false
+    kafka:
+     consumer:
+       bootstrap-servers: kafka:9092
+       group-id: group_id
+       auto-offset-reset: earliest
+       enable-auto-commit: false
+     listener:
+        missing-topics-fatal: false
+        ack-mode: MANUAL
+eureka:
+  #App name
+  instance:
+    appname: logger-service
+    hostname: logger-service
+    prefer-ip-address: true
+  #Register the service to the Eureka server
+  #In the following server
+  client:
+    fetch-registry: true
+    registerWithEureka: true
+    service-url:
+      defaultZone: http://eureka-server:9000/eureka
+
+    

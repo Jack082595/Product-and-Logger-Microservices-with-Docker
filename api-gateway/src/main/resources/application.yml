@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: api-gateway
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      routes:
+        - id : product-service
+          #uri: http://localhost:8083
+          uri: lb://PRODUCT-SERVICE
+          predicates:
+            - Path=/product/**, /order/**
+        - id: logger-service
+          #uri: http://localhost:8084
+          #No controller available in logger service,
+          #this is to show the KafkaListener message only (consumer)
+          #ignore the uri below when doing testing
+          uri: lb://LOGGER-SERVICE
+          predicates:
+            - Path=/logger/**
+eureka:
+  #App name
+  instance:
+    hostname:  api-gateway
+    prefer-ip-address: true
+  #Register the service to the Eureka server
+  #In the following server
+  client:
+    fetch-registry: true
+    registerWithEureka: true
+    service-url:
+      defaultZone: http://eureka-server:9000/eureka
+
+
