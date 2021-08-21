@@ -28,13 +28,13 @@ Instruction How to Run the Spring Boot Application with Docker Container.
  - ![add-product-by-order-id-response](https://user-images.githubusercontent.com/15647309/130321054-55425b8f-ba55-4865-9bd6-ad6bc591a7b0.PNG)
  - ![add-product-by-order-id-response2](https://user-images.githubusercontent.com/15647309/130321055-ed38a620-70ae-4fc4-be00-3d8d6b907240.PNG)
 6. To view Kafka messages: (Kafka and Zookeeper is running through Docker)
-- Product Microservice - Producer
-- Logger Microservice - Consumer
+- Product Microservice - Producer (Send messages to the broker/topic Ex: The data being add or retrieved such as the Product and Order)
+- Logger Microservice - Consumer (Receives messages from the broker/topic that are being published from Producer - Product Microservice)
 - ![Kafka-consumed-message-from-broker](https://user-images.githubusercontent.com/15647309/130321178-6edc0866-e0ae-4ef6-a149-b9d385aa50ff.PNG)
 7. Let's view our mysql database records in command shell examples. (Mysql is running through Docker)
 -![mysql-db-record](https://user-images.githubusercontent.com/15647309/130321226-0e59d922-70d6-4fd9-b175-e13c70cc3b3c.PNG)
-9. Structure of my Docker Container that are running.
-10.![product-docker-running](https://user-images.githubusercontent.com/15647309/130321265-a8578fa1-3023-40d4-b2a3-504b7684f8fd.PNG)
+9. Docker Container that are running.
+-![product-docker-running](https://user-images.githubusercontent.com/15647309/130321265-a8578fa1-3023-40d4-b2a3-504b7684f8fd.PNG)
+-![running-container](https://user-images.githubusercontent.com/15647309/130326154-4bdd6e77-dd92-4c8a-b589-fe68bc65e676.PNG)
      
-Thats all! This is my first time doing Spring Boot with Docker. This serves as my practice in doing this activity.
-   
+Thats all! This is my first time doing Spring Boot with Kafka and Docker. This serves as my practice in doing the activity.
